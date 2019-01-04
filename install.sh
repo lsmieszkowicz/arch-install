@@ -21,6 +21,7 @@ passwd root
 pacman -S intel-ucode 
 pacman -S grub efibootmgr
 
+lsblk
 echo 'Please insert EFI partition path:'
 read esp
 mkdir /mnt/boot/efi
@@ -29,6 +30,8 @@ grub-install --target=x86_64-efi --efi-directory=$esp --bootloader-id=GRUB
 grub-mkconfig -o /boot/grub/grub.cfg
 
 pacman -S os-prober
+
+lsblk
 echo 'Type path to windows partition'
 read winpart
 mkdir /mnt/win $winpart
@@ -38,6 +41,7 @@ grub-mkconfig -o /boot/grub/grub.cfg
 echo 'Type your username:'
 read username
 useradd -m -g users -G wheel,power,storage,input -s /bin/bash $username
+passwd $username
 
 visudo
 
