@@ -1,0 +1,25 @@
+#################################################
+MBR install
+#################################################
+pacman -S intel-ucode grub os-prober
+grub-install --target=i386-pc /dev/sdX <--- !!!
+mkdir /mnt/boot/win
+mount /dev/sdX /mnt/boot/win
+os-prober
+grub-mkconfig -o /boot/grub/grub.cfg
+
+
+#################################################
+# EFI install
+################################################
+
+pacman -S intel-ucode grub efibootmgr os-prober
+mkdir /mnt/boot/efi
+mkdir /mnt/boot/win
+lsblk
+mount /dev/costam /mnt/boot/efi
+mount /dev/costam2 /mnt/boot/win
+grub-install --target=x86_64-efi --efi-directory=/mnt/boot/efi --bootloader-id=GRUB
+grub-mkconfig -o /boot/grub/grub.cfg
+os-prober
+grub-mkconfig -o /boot/grub/grub.cfg
