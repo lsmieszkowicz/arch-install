@@ -34,9 +34,3 @@ amixer sset Speaker unmute
 amixer sset Headphone unmute
 
 pacman -S firefox
-
-git clone https://aur.archlinux.org/yay.git
-cd yay
-makepkg -si
-cd ..
-rm -rf ~/yay/
