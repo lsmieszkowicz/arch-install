@@ -4,7 +4,7 @@ echo
 echo 'INSTALLING DRIVERS AND XORG'
 echo 
 
-PACKAGES = (
+PACKAGES=(
 
     # DRIVERS
     'xf86-video-fbdev' 

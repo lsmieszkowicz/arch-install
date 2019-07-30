@@ -4,7 +4,7 @@ echo
 echo 'INSTALLING AUDIO PACKAGES'
 echo 
 
-PACKAGES = (
+PACKAGES=(
 
     'alsa-utils' 
     'pulseaudio' 

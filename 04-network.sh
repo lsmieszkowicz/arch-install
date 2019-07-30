@@ -4,7 +4,7 @@ echo
 echo 'INSTALLING NETWORK PACKAGES'
 echo 
 
-PACKAGES = (
+PACKAGES=(
 
     'networkmanager'
 
