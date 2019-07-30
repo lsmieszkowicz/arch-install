@@ -15,7 +15,7 @@ PACKAGES=(
 
 for PKG in "${PACKAGES[@]}" ; do 
     echo "Installing: $PKG "
-    pacman -S --no-confirm $PKG
+    pacman -S $PKG --noconfirm 
 done
 
 amixer sset Master unmute
