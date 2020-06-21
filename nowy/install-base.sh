@@ -4,7 +4,7 @@ echo ""
 echo 'INSTALUJE PODSTAWOWE PROGRAMY'
 echo ""
 
-PACKAGE_LIST (
+PACKAGE_LIST=(
     # XORG
     xorg-server
     xorg-apps
