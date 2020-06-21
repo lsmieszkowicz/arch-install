@@ -59,5 +59,5 @@ echo ""
 echo "Zakonczono pierwszy etap instalacji"
 echo ""
 
-cp . /mnt/arch-install
+cp -r . /mnt/arch-install
 arch-chroot /mnt /arch-install/nowy/finish-install.sh
