@@ -11,12 +11,12 @@ PACKAGE_LIST (
     mesa
     xf86-input-libinput
     xorg-xinit
-
+    #
     #dzwiek
     alsa-utils
     pulseaudio
     pulseaudio-alsa
-
+    #
     #czcionki
     ttf-bitstream-vera
     ttf-dejavu
