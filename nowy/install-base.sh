@@ -1,6 +1,8 @@
-echo
+#!/bin/bash
+
+echo ""
 echo 'INSTALUJE PODSTAWOWE PROGRAMY'
-echo 
+echo ""
 
 PACKAGE_LIST (
     # XORG

@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # zmiana roota
 arch-chroot /mnt
 
@@ -25,7 +27,7 @@ mkinitcpio -P
 passwd root
 
 # GRUB
-pacman -Sq grub intel-ucode
+pacman -Sq --noconfirm grub intel-ucode
 lsblk
 read -p "Gdzie zainstalowac GRUBA? (np. /dev/sda): " GRUB_DIR
 grub-install --terget=i386-pc $GRUB_DIR

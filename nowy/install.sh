@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # polski uklad klawiatury
 loadkeys pl
 
@@ -37,10 +39,13 @@ if [[ $USE_HOME = 'y' ]]; then
     mount $HOME_DIR /home
 fi
 
-read -p "Wybierz partycje swap: " SWAP_DIR
-mkswap $SWAP_DIR
-swapon $SWAP_DIR
-
+read -p "Czy utworzyc partycje swap? [y/n]: " USE_SWAP
+if [[ $USE_SWAP = 'y' ]]; then
+    lsblk
+    read -p "Wybierz partycje swap: " SWAP_DIR
+    mkswap $SWAP_DIR
+    swapon $SWAP_DIR
+fi
 # wybor mirrorow
 vim /etc/pacman.d/mirrorlist
 
@@ -53,3 +58,5 @@ genfstab -U /mnt >> /mnt/etc/fstab
 echo ""
 echo "Zakonczono pierwszy etap instalacji"
 echo ""
+
+arch-chroot /mnt ./finish-install.sh
