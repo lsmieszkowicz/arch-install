@@ -60,4 +60,3 @@ echo "Zakonczono pierwszy etap instalacji"
 echo ""
 
 cp -r . /mnt/arch-install
-arch-chroot /mnt /arch-install/finish-install.sh
