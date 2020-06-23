@@ -42,11 +42,10 @@ passwd $USER_NAME
 visudo
 
 # instalacja programow
-./install-base.sh
-#./install-programs.sh
-#./install-wm.sh
+./install-programs.sh
 
-# konczenie instalacji
-exit
-umount -R /mnt
-reboot
+read -p "Czy uzywasz Virtualboxa? [y/n]" USE_VBOX
+if [[ $USE_VBOX = 'y']]; then
+    pacman -Sq --noconfirm virtualbox-guest-utils xf86-video-vmware
+    systemctl enable vboxservice.service
+fi

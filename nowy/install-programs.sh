@@ -33,13 +33,10 @@ PACKAGE_LIST=(
     ttf-inconsolata
 )
 
-for PKG in ${PACKAGE_LIST[@]};
-do
-    echo "Instaluję: $PKG "
-    pacman -Sq $PKG --noconfirm
-done
+# instalacja
+pacman -Sq --noconfirm $PACKAGE_LIST 
 
-# konfiguracja
+# konfiguracja i wlaczenie uslug
 amixer sset Master unmute
 systemctl enable NetworkManager.service
 systemctl start NetworkManager.service
