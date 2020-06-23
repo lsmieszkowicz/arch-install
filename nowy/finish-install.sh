@@ -30,7 +30,7 @@ passwd root
 pacman -Sq --noconfirm grub intel-ucode
 lsblk
 read -p "Gdzie zainstalowac GRUBA? (np. /dev/sda): " GRUB_DIR
-grub-install --terget=i386-pc $GRUB_DIR
+grub-install --target=i386-pc $GRUB_DIR
 grub-mkconfig -o /boot/grub/grub.cfg
 echo "GRUB zainstalowany"
 
