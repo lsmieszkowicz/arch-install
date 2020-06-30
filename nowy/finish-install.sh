@@ -16,9 +16,11 @@ echo "KEYMAP=pl" > /etc/vconsole.conf
 
 # konfiguracja sieci
 read -p "Podaj nawzwe tego komputera: " HOST_NAME
-echo "$HOSTNAME" > /etc/HOSTNAME
+echo "$HOSTNAME" > /etc/hostname
 
 echo "127.0.0.1    localhost" >> /etc/hosts
+echo "::1           localhost" >> /etc/hosts
+echo "127.0.1.1     $HOSTNAME.localhost     $HOSTNAME.localhost" >> /etc/hosts
 
 # initramfs
 mkinitcpio -P
@@ -40,9 +42,6 @@ useradd -g users -G wheel,storage,power,input -m -s /bin/bash $USER_NAME
 echo "Haslo dla uzytkownika: "
 passwd $USER_NAME
 visudo
-
-# instalacja programow
-./install-programs.sh
 
 read -p "Czy uzywasz Virtualboxa? [y/n]" USE_VBOX
 if [[ $USE_VBOX = 'y']]; then
